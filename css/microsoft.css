@@ -1,0 +1,1034 @@
+/* Option 2: Import via CSS */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+*{ 
+    /* border: 1px solid #000; */
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: 微軟正黑體;
+}
+body,html{
+    padding: 0px;
+    margin: 0px;
+}
+header{
+    padding: 0px 5%;
+}
+nav{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    height: 56px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+menu{
+    padding: 0px;
+    margin: 0px;
+    display:flex;
+    align-items:stretch ;
+    font-size: 13px;
+    width: 600px;
+    /* display:inline-flex;
+    align-items: center; */
+    justify-content: flex-start;
+}
+
+/* 左側產品選單 */
+nav .product_menu{
+    padding: 0px;
+    margin: 0px;
+}
+/* 產品選單中的a標籤 */
+nav .product_menu a{
+    padding: 16px 8px 10px;
+}
+/* logo */
+nav logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+menu .logo_microsoft{
+    width: 108px;
+    height: 23px;
+    margin-right: 24px;
+}
+
+menu a, label{
+    display:flex;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* 更多> 在table寬度的時候會出現 */
+/* 要被隱藏轉入more的兩個按鈕 叫做.hidden */
+
+
+.btn_more{
+    display: none;
+}
+
+.more_list{
+    /* overflow: hidden; */
+    top: 56px;
+    width: 170px;
+    max-height:0px;
+    border: 1px solid #e4e4e4;
+    border-bottom: 1.5px solid #000;
+    background-color: #f2f2f2;
+    display: none;
+
+}
+
+
+input{
+    display: none;
+}
+/* 彈出動作 */
+.all_micro_menu{
+    max-height: 0px;
+    overflow: hidden;
+    z-index: 2;
+}
+.burger{
+    display: none;
+}
+
+
+/* 選單展開後 */
+.micro_list .hid_inner{
+    display: none;
+}
+
+.all_micro:checked~.all_micro_menu{
+    max-height: 391px;
+}
+.btn_all_micro{
+
+    padding: 16px 8px 16px 15px;
+}
+
+.all_micro:checked~.btn_all_micro{
+    background-color: #f2f2f2;
+    border-right: 1px solid #e4e4e4;
+}
+
+
+/* 跳出隱藏選單 */
+.user_function .all_micro_menu{
+    position: absolute;
+    top:56px;
+    right:5%;
+    width: 1230px;
+    height: 391px;
+    display: flex;
+    flex-direction: column;
+}
+/* 上半部隱藏選單 */
+.all_micro_menu .micro_list{
+    width: 100%;
+    background-color: #f2f2f2;
+    border: 1px solid #e4e4e4;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height:calc(100% - 38px)
+}
+/* 選項大分類 */
+.all_micro_menu ul{
+    width: 200px;
+    list-style: none;
+    margin:0px;
+    padding: 0px;
+}
+.all_micro_menu label{
+    padding: 18px 0px 18px 24px;
+    font-weight: bolder;
+}
+.all_micro_menu ul a{
+    padding: 12px 0px  12px 24px ;
+}
+
+/* 下半部網站地圖按鈕 */
+.all_micro_menu .sitemap_btn{
+    background-color: #e5e5e5;
+    border-bottom: 2px solid #000;
+    height: 38px;
+    width: 100%;
+}
+
+.sitemap_btn span{
+    margin:auto;
+}
+/* 內部選項hover */
+
+.all_micro_menu a:hover span ,.all_micro_menu a:hover {
+    border: none;
+    text-decoration: underline;
+}
+
+menu span{
+    display:flex;
+    align-items: center;
+}
+
+/* 右上使用者選項 */
+nav .user_function{
+    display:flex;
+    justify-content: space-between;
+    width: 320px;
+}
+
+/* 右上選項icon */
+.user_function i{
+    font-size: 16px;
+    padding: 4px;
+    margin-bottom: 8px;
+}
+.burger i{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    
+}
+
+.x{
+    display:none;
+}
+.x i{
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    
+}
+
+/* 登入按鈕 */
+.btn_login{
+    /* margin: 8px; */
+    width: fit-content;
+    
+}
+
+.btn_login span{
+    
+    padding: 0px 4px 0px 12px;
+}
+/* 登入ICON */
+a .icon_user{
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+}
+
+/* 以下hover掌管nav選項的底線 */
+.btn_links span, .product_menu a span{
+    border-bottom: 2.5px solid rgb(247, 234, 234, 0);
+}
+
+.btn_links:hover span, .product_menu a:hover span{
+    border-bottom: 2.5px solid #000;
+}
+/* 以下為navbar的RWD */
+@media(max-width:1439px){
+    .all_micro:checked~.micro_list{
+        height:calc(100% - 38px);
+    }
+
+    .all_micro:checked~.all_micro_menu{
+        max-height:calc(100% - 56px);
+        height:calc(100% - 56px);
+        width: 90%;
+        display: flex;
+    }
+    .btn_links span.hid, .btn_login .hid{
+        display: none;
+    }
+}
+
+@media(max-width:960px){
+    menu .hidden, .not_hidden2{
+        display: none;
+    }
+    
+/* 更多按鈕按下後展開第一段 內含兩個按鈕 */
+    #btn_more:checked~label .more_list{
+        display: block;
+        position: absolute;
+        max-height:160px;
+        z-index: 3;
+    }
+/* 更多內部選單的按鈕 */
+#btn_more:checked~label .more_list a{
+    padding: 18px 0px 18px 24px;
+}
+
+#btn_more:checked~label .more_list a:hover{
+    background-color: #e6e6e6;
+}
+
+#btn_more:checked~label .more_list a span{
+    border-bottom: none;
+}
+
+#btn_more:checked~label .more_list a:hover span{
+    text-decoration:underline;
+}
+
+/* 更多內部選單的按鈕 */
+
+    
+
+    menu .btn_more{
+        display: flex;
+    }
+
+    .btn_search i, .btn_bicart i{
+        padding: 8px 0px;
+    }
+    .btn_links .search, .btn_links .bi_cart{
+        display: none;
+    }
+
+    /* 螢幕變小的時候，所有Microsoft選單變小 */
+    input:checked~.micro_list{
+        height:calc(100% - 38px);
+        overflow:scroll;
+    }
+
+    input:checked~.all_micro_menu{
+        max-height:calc(100% - 56px);
+        height:calc(100% - 56px);
+        width: 90%;
+        display: flex;
+    }
+}
+
+
+@media(max-width:890px){
+    menu .hidden2{
+        display: none;
+    }
+    menu .not_hidden2{
+        display: flex;
+    }
+}
+
+/* phone 手機版的nav */
+
+@media(max-width:859px){
+    /* logo以外的隱藏*/
+
+    header{
+        padding: 0px;
+    }
+
+    header nav #product_menu *:not(:first-child) {
+        display: none;
+    }
+    #product_menu{
+        width: unset;
+        position: absolute;
+        left: 50%;      
+        top: 28px;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .btn_login .text{
+        display: none;
+    }
+
+    .btn_all_micro .Mirco_text ,.btn_all_micro .bi-chevron-down{
+        display: none;
+    }
+    
+    .btn_all_micro .burger{
+        display:flex;
+    }
+
+    nav.nav{
+        justify-content:space-around;
+
+    }
+
+    header nav .user_function{
+        width: 100%;
+        justify-content: flex-start; 
+    }
+    .btn_search{
+        margin-right:auto;
+    }
+    .btn_bicart{
+        margin-right: 24px;
+    }
+    /* 以上是navbar */
+    /* 以下大概是漢堡 */
+    .btn_links span{
+        border-bottom: 0px solid rgba(247, 234, 234, 0);
+    }
+
+    .btn_links:hover span{
+        border-bottom: 0px solid rgba(247, 234, 234, 0);
+    }
+
+    .all_micro:checked~.btn_all_micro .x{
+        display: block;
+    }
+
+    
+
+    .all_micro:checked~.btn_all_micro .btn_links .burger{
+        display: none;
+    }
+
+    .all_micro:checked~.all_micro_menu{
+        max-height:calc(100% - 56px);
+        height:calc(100% - 56px);
+        width: 100%;
+        left:0px;
+        display: flex;
+    }
+
+    /* 選單內的分類選單按下彈出vvvv */
+    .all_micro_menu .micro_list{
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        height:calc(100% - 38px)
+    }
+
+    .micro_list .label_menu_inner{
+        font-weight: normal;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-right: 24px;
+    }
+
+    .micro_list .hid_inner{
+        display: list-item;
+    }
+
+
+    label.label_menu_inner:active , label.label_menu_inner li:active{
+        border: dashed 0.5px black;
+    }
+
+    /* 雪弗龍箭頭 上 */
+
+
+    .micro_list .label_menu_inner:not(.hid_inner)::after{
+            border-style: solid;
+            border-width: 1px 1px 0 0;
+            content: '';
+            display: inline-block;
+            height: 0.45em;
+            margin-left: auto;
+            position: relative;
+            top: 0px;
+            transform: rotate(-225deg);
+            vertical-align: top;
+            width: 0.45em;
+    }
+    
+
+
+
+    .micro_list ul{
+        width: 100%;
+    }
+
+
+    .micro_list ul li{
+        display: none;
+    }
+
+    .micro_list ul li a{
+        padding: 15px;
+    }
+
+    .menu_inner:checked~li {
+        display: list-item;
+        padding: 0px 0px 0px 35px;
+    }
+
+
+
+    /* 雪弗龍向上 */
+    .menu_inner:checked~.label_menu_inner::after{
+        border-style: solid;
+        border-width: 1px 1px 0 0;
+        content: '';
+        display: inline-block;
+        height: 0.45em;
+        margin-left: auto;
+        position: relative;
+        top: 2px;
+        transform: rotate(-45deg);
+        vertical-align: top;
+        width: 0.45em;
+    }
+}
+
+/* 以上為navbar的RWD */
+
+/* 以下為banner */
+
+#primary_area{
+    margin: 0px 5%;
+    position: relative;
+    cursor: pointer;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    background-color: #333;
+}
+
+/* banner的按鈕 */
+#primary_area button.btn_left ,button.btn_right{
+    border-radius: 100px;
+    border: 1px solid #666;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    /* 以下定位 以上按鈕樣式 */
+    width: 42px;
+    height: 42px;
+    padding-bottom: 5px;
+    padding-left: 7px;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: none;
+}
+
+#primary_area button.btn_right{
+    right:0px;
+}
+#primary_area button:hover{
+    background-color: #6e6e6e;
+    box-shadow:0 4px 8px rgb(0 0 0 / 40%); ;
+}
+/* 以上按鈕 */
+
+
+
+.banner .ban_img{
+    width: 100%;
+    height: 100%;
+    display:none;
+}
+#primary_area:hover button{
+    display: block;
+}
+
+/* 文字部分 */
+.banner_text{
+    width: 440px;
+    height: 186px;
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left:5%;
+    color: rgb(255, 255, 255);
+}
+@media(max-width:1259px){
+    .banner_text{
+        max-width: 340px;
+    }
+}
+@media(max-width:767px){
+    .banner_text{
+        max-width: none;
+        width: 100%;
+        height: 320px;
+        background-color: #333;
+        position: relative;
+        top:0px;
+        transform:translateY(0%);
+        margin: 0px;
+        /* 以下為定位內層的flex */
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 24px;
+    }
+    .banner_text2{
+        background-color: #f4f4f4;
+    }
+}
+.new{
+    width: 73.15px;
+    height: 30.5px;
+    font-size: 14px;
+    background-color: #ffb900;
+    color: #000;
+    padding: 4px 14px 4px;
+    font-weight: bolder;
+}
+
+.banner_text .title{
+    margin-top: 8px;
+    font-size: 24px;
+    padding-bottom: 4px;
+    font-weight: bold;
+}
+.banner_text p{
+    font-size: 14px;
+}
+
+.banner_text a{
+    display: block;
+    text-decoration: none;
+    padding: 8px 20px;
+    width: 245.4px;
+    height: 39.5px;
+    background-color: #fff;
+    transition-duration: 0.5s;
+    margin-top: 24px;
+}
+a.call_to_action .a{
+    
+    color: #000;
+    font-size: 16px;
+    margin-right: auto;
+    font-weight: bold;
+    
+}
+
+a.call_to_action .a:after{
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.45em;
+    position: relative;
+    top: 7px;
+    transform: rotate(45deg);
+    vertical-align: top;
+    width: 0.45em;
+    transition:ease-in 0.2s;
+}
+
+.banner_text a:hover{
+    padding-left:18px;
+    padding-right:14px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+
+a.call_to_action .a span{
+    font-size: 16px;
+    position: relative;
+}
+/* 上面的字的底線 */
+a.call_to_action:hover .a span:before{
+    
+    content:'';
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    background-color: #000;
+    bottom: -3px;
+}
+
+a.call_to_action:hover .a:after{
+    margin-left: 4px;
+}
+
+
+
+/* 下面那個call to action的按鈕寬度 */
+.banner_text2{
+    color: #000;
+}
+.banner_text2 a{
+    width: 123px;
+}
+
+
+/* 隱藏圖片 */
+.banner .img_xl{
+    display: block;
+}
+
+@media(max-width:1259px){
+    .banner .img_xl{
+        display: none;
+    }
+    .banner .img_l{
+        display: block;
+    }
+}
+
+@media(max-width:1083px){
+    #primary_area{
+        margin: 0px 0px;
+    }
+    .banner .img_l{
+        display: none;
+    }
+    .banner .img_m{
+        display: block;
+    }
+}
+
+
+@media(max-width:767px){
+
+    .banner .img_m{
+        display: none;
+    }
+    .banner .img_s{
+        display: block;
+    }
+}
+
+
+@media(max-width:539px){
+    .banner .img_s{
+        display: none;
+    }
+    .banner .img_xs{
+        display: block;
+    }
+}
+
+section.btn_group{
+
+    margin: 0px 5%;
+    padding-top: 48px;
+    /* 以下用flex對齊內部三個大方形按鈕( a.btn_ic) */
+    display: flex;
+    justify-content: center;
+    
+}
+section.btn_group a.btn_ic{
+    display: inline-block;
+    height: 112px;
+    width: 184px;
+    text-decoration: none;
+    padding: 12px 6px;
+    /* Btn內部的 icon與文字的flex*/
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+
+section.btn_group a.btn_ic img{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+section.btn_group a.btn_ic .text{
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline rgba(0 0 0 0);
+}
+section.btn_group a.btn_ic:hover .text{
+    text-decoration: underline rgb(0, 0, 0);
+}
+
+section.btn_group a.btn_ic:focus{
+    background-color: #E5EFF8;
+    border: 1.5px solid #000;
+}
+@media(max-width:767px){
+    section.btn_group{
+        flex-direction: column;
+        align-items: flex-start;    
+    }    
+
+    section.btn_group a.btn_ic{
+        width: unset;
+        height:48px;
+        flex-direction: row;
+    }
+
+    section.btn_group a.btn_ic img{
+        width: 20px;
+        height: 20px;
+        margin: 0px 8px 0px 0px ;
+    }
+}
+
+
+/* 以上三個icon按鈕 */
+
+/* 以下開始卡片cards */
+section.product_card{ 
+    padding: 0px 5% 0px 5%;
+    /* 以下對齊內部的卡片們 */
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-bottom: 48px;
+}
+.product_card .cards{
+    width: calc(25% - 18px);
+    padding: 48px 0px 0px 0px;
+    position: relative;
+}
+.product_card .cards img{
+    width: 100%;
+    padding-bottom: -56%;
+    opacity: 1;
+}
+.product_card .cards:hover img{
+    opacity: 0.9;
+}
+.product_card h3{
+    margin: 37px 0px 0px;
+    font-size: 19px;
+}
+/* 最新內容黃色標籤 */
+.product_card .cards_new h3:before{
+    content: '查看更新的內容';
+    font-weight: normal;
+    font-size: 13px;
+    padding: 4px 15px;
+    background-color: #FFD800;
+    display: block;
+    width: fit-content  ;
+    margin: 8px 0px 8px 0px;
+}
+.product_card .cards_new h3{
+    margin: 0px;
+}
+/* 最新內容黃色標籤 */
+
+.product_card p{
+    font-size: 15px;
+    margin: 0px;
+}
+
+.product_card a{
+    color: #0067B8;
+    display: block;
+    width: fit-content;
+    /*最大版是block 縮小後會變inline-block複數以上<a>才會並排 */
+    display: inline-block;
+    padding: 10px 16px 7px 0px;
+    text-decoration:none;
+    position: relative;
+    border: 2px solid transparent;
+    transition-duration: 0.2s;
+}
+@media(max-width:1284px){
+    .product_card a{
+        display: block;
+    }
+}
+
+@media(max-width:1279px){
+    section.product_card{
+        flex-wrap: wrap;
+    }
+
+    .product_card .cards{
+        width: calc(50% - 12px);
+    }
+    .product_card a{
+        display: inline-block;
+    }
+}
+
+@media(max-width:538px){
+    section.product_card{ 
+        padding: 3% 3% 0px 3%;
+    }    
+    .product_card .cards{
+        width: 100%;
+        padding: 48px 12px 0px 12px;
+    }
+
+}
+
+/* 按鈕a的效果們 */
+
+
+.product_card a span{
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    transition-duration: 0.2s;
+}
+
+
+.product_card a i{
+    margin-left: 0px;
+    transition-duration: 0.2s;
+}
+
+.product_card a:hover span::before{
+    content:'';
+    width: 97%;
+    height: 2px;
+    background-color: #0067B8;
+    position: absolute;
+    bottom: -2px;
+}
+
+.product_card a:hover{    
+    border: 2px solid transparent;
+}
+.product_card a:hover i{
+    margin-left:    6px;
+}
+.product_card a:focus{
+    border: 2px solid #000;
+    background-color: #E5EFF8;
+}
+/* 追蹤我們小icon */
+section.follow{  
+    padding-left: 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.follow span{
+    font-size: 15px;  
+    margin-right: 18px;
+}
+.follow div{
+    width: 28px;
+    height: 28px;
+    background-color: #000;
+    margin-right: 18px;
+    cursor: pointer;
+}
+.follow .icon{
+
+    width: 28px;
+    height: 28px;
+}
+.follow .icon:hover {
+    opacity: 0.9;
+}
+/* 底部導航都在這下面 */
+footer{
+    background-color: #f2f2f2;
+    color: #616161;
+
+    min-height: 396px;
+
+    /* 對內部元素的調整 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+footer .buttom_nav{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: fit-content;
+    min-height: 324px;
+    background-color: unset;
+}
+
+.buttom_nav .buttom_nav_group .heading{
+    font-weight:bold;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.buttom_nav .buttom_nav_group{
+    padding-top: 36px;
+    width: 16%;
+}
+
+@media (max-width:1080px){
+    .buttom_nav .buttom_nav_group{
+        width: 33%;
+    }
+}
+
+@media (max-width:600px){
+    .buttom_nav .buttom_nav_group{
+        width: 100%;
+    }
+}
+
+.buttom_nav .buttom_nav_group ul{
+    padding: 0px;
+    list-style: none;
+}
+
+.buttom_nav .buttom_nav_group ul li{
+    padding: 8px 0px;
+}
+
+.buttom_nav .buttom_nav_group ul li a{
+    color: #616161;
+    text-decoration: none;
+    font-size: 11px;
+    line-height: 16px;
+}
+
+.footer_copyright{
+    height: 72px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.copyright_info{
+    display: flex;
+}
+.copyright_info div{
+    padding-right: 24px;
+}
+
+.footer_copyright a{
+    text-decoration: none;
+    color: #616161;
+}
+footer a:active{
+    border: dashed 0.5px black;
+}
+footer a:hover ,.buttom_nav .buttom_nav_group ul li a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:800px){
+    .footer_copyright{
+        height: 107px;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .language{
+        width: 100%;
+        height: 33px;
+    }
+    .language a{
+        height: 33px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .copyright_info{
+        padding-top: 12px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .copyright_info div{
+        padding-right: 0px;
+    }
+}
