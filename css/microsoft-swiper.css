@@ -487,8 +487,28 @@ a .icon_user{
     width: 100%;
     background-color: #333;
 }
-
-/* banner的按鈕 */
+/* swiper banner btn */
+.primary_area .swiper-button-next,.primary_area .swiper-button-prev{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 0;
+}
+.primary_area .swiper-button-next div,.primary_area .swiper-button-prev div {
+    height: 27px;
+}
+.primary_area .swiper-button-next::after,.primary_area .swiper-button-prev::after{
+    background-color: #333;
+    border-radius: 100%;
+    font-size: 18px;
+    
+    width: 42px;
+    height: 42px;
+    
+}
+/* banner的按鈕 */  
 #primary_area button.btn_left ,button.btn_right{
     border-radius: 100px;
     border: 1px solid #666;
@@ -504,7 +524,7 @@ a .icon_user{
     top:50%;
     transform: translateY(-50%);
     z-index: 1;
-    display: none;
+    /* display: none; */
 }
 
 #primary_area button.btn_right{
@@ -561,8 +581,13 @@ a .icon_user{
         text-align: center;
         padding: 24px;
     }
-    .banner_text2{
+    .banner_text_bt2{
         background-color: #f4f4f4;
+    }
+    .banner_text_bt2 .action_group{
+        width: 100%;
+        padding-left: 20%;
+        padding-right: 20%;
     }
 }
 .new{
@@ -621,7 +646,6 @@ a.call_to_action .a:after{
 .banner_text a:hover{
     padding-left:18px;
     padding-right:14px;
-    background-color: rgba(255, 255, 255, 0.7);
 }
 
 
@@ -643,8 +667,25 @@ a.call_to_action:hover .a span:before{
 a.call_to_action:hover .a:after{
     margin-left: 4px;
 }
+.banner_text_bt2 .action_group{
+    display: flex;
+}
+.banner_text_bt2 .action1{
+    background-color: #000;
+    color: #fff;
+    width: 50%;
+}
 
-
+.banner_text_bt2 .action_group a .a span{
+    font-size: 14px;
+}
+.banner_text_bt2 a.action1 .a{
+     color: #fff;
+}
+.banner_text_bt2 .action2{
+    width: 49.99%;
+    background-color: unset;
+}
 
 /* 下面那個call to action的按鈕寬度 */
 .banner_text2{
