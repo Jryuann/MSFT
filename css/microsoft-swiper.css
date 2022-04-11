@@ -494,19 +494,24 @@ a .icon_user{
     align-items: center;
     justify-content: center;
     text-align: center;
-    line-height: 0;
-}
-.primary_area .swiper-button-next div,.primary_area .swiper-button-prev div {
-    height: 27px;
-}
-.primary_area .swiper-button-next::after,.primary_area .swiper-button-prev::after{
-    background-color: #333;
-    border-radius: 100%;
-    font-size: 18px;
-    
+
     width: 42px;
     height: 42px;
+    background-color: #333;
+    border-radius: 100%;
+    border: 1px solid #666;
+}
+.primary_area .swiper-button-prev{
+    left: 0px;
+}
+.primary_area .swiper-button-next{
+    right: 0px;
+}
+
+.primary_area .swiper-button-next::after,.primary_area .swiper-button-prev::after{
     
+    font-size: 18px;    
+    color: #fff;
 }
 /* banner的按鈕 */  
 #primary_area button.btn_left ,button.btn_right{
