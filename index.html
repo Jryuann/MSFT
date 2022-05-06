@@ -220,21 +220,26 @@
             </div>
 
             <div class="swiper-slide banner ">
-                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWUuNl?ver=8047&q=0&m=8&h=600&w=1600&b=%23FFFFFFFF&l=f&x=67&y=336&s=2690&d=1009&aim=true" alt="最大1600*600" class="ban_img img_xl">
+                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWUuNl?ver=8047&q=0&m=8&h=600&w=1600&b=%23FFFFFFFF&l=f&x=67&y=336&s=2690&d=1009&aim=true"
+                    alt="最大1600*600" class="ban_img img_xl">
 
-                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWUuNl?ver=8047&q=0&m=8&h=472&w=1259&b=%23FFFFFFFF&l=f&x=31&y=330&s=2725&d=1022&aim=true" alt="1259*476" class="ban_img img_l">
+                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWUuNl?ver=8047&q=0&m=8&h=472&w=1259&b=%23FFFFFFFF&l=f&x=31&y=330&s=2725&d=1022&aim=true"
+                    alt="1259*476" class="ban_img img_l">
 
-                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWUuNl?ver=8047&q=0&m=8&h=609&w=1083&b=%23FFFFFFFF&l=f&x=109&y=95&s=2653&d=1492&aim=true" alt="1083*609" class="ban_img img_m">
+                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWUuNl?ver=8047&q=0&m=8&h=609&w=1083&b=%23FFFFFFFF&l=f&x=109&y=95&s=2653&d=1492&aim=true"
+                    alt="1083*609" class="ban_img img_m">
 
-                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWUuNl?ver=8047&q=0&m=8&h=431&w=767&b=%23FFFFFFFF&l=f&x=1380&y=383&s=1416&d=796&aim=true" alt="767*431" class="ban_img img_s">
+                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWUuNl?ver=8047&q=0&m=8&h=431&w=767&b=%23FFFFFFFF&l=f&x=1380&y=383&s=1416&d=796&aim=true"
+                    alt="767*431" class="ban_img img_s">
 
-                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWUuNl?ver=8047&q=0&m=8&h=303&w=539&b=%23FFFFFFFF&l=f&x=1399&y=394&s=1394&d=784&aim=true" alt="539*303" class="ban_img img_xs">
+                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWUuNl?ver=8047&q=0&m=8&h=303&w=539&b=%23FFFFFFFF&l=f&x=1399&y=394&s=1394&d=784&aim=true"
+                    alt="539*303" class="ban_img img_xs">
 
                 <div class="banner_text banner_text_bt2" style="color: #000;">
 
                     <div style="display: none;" class="new">新上市</div>
 
-                    <div  class="title">專為今天和明天的生活而設計</div>
+                    <div class="title">專為今天和明天的生活而設計</div>
 
                     <p>
                         新一代遊戲、 您的目標、 親朋好友。 Windows 11 是為了讓您更貼近所喜愛的一切。
@@ -251,7 +256,7 @@
                             </div>
                         </a>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -260,7 +265,7 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
     </div>
-
+    <div class="swiper-stop">=</div>
     <section id="primary_area">
 
         <banner class="banner">
@@ -563,13 +568,20 @@
 
     <!-- Initialize Swiper -->
     <script>
+        var stop_btn = document.querySelector(".swiper-stop")
         var swiper = new Swiper(".mySwiper", {
+            autoplay: {
+                delay: 1000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },
+
             cssMode: true,
-            loop:true,
+            loop: true,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
-                
+
             },
             pagination: {
                 el: ".swiper-pagination",
@@ -577,6 +589,16 @@
             mousewheel: true,
             keyboard: true,
         });
+
+        stop_btn.onclick=function(){
+            if (swiper.autoplay.running) {
+                swiper.autoplay.stop()
+            } else {
+                swiper.autoplay.start()
+            }
+        }
+
+
     </script>
 </body>
 

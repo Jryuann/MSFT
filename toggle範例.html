@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toogle小飯粒</title>
+    <style>
+        .block {
+            width: 200px;
+            height: 200px;
+        }
+
+        /* [注意] red 跟 blue 的順序調換會有影響 */
+        .red {
+            background-color: red;
+        }
+        .blue {
+            background-color: blue;
+        }
+
+        #block2 {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="block red" onclick="toggleColor(this)"></div>
+    <div id="block2" class="block red" onclick="toggleColor2()"></div>
+
+
+
+    <script>
+        /* 
+            這個 function 的功用是一直把blue這個class放上去又拿掉
+            
+            因為上面那個div本來就有red這個class，所以本來是紅色，
+            blue放上去會蓋掉background-color所以變成藍色，
+            blue拿掉又變回紅色
+        */
+
+        // elmt 是從 onclick="toggleColor(this)" 的 this 來的，名字其實可以自己取
+        function toggleColor(elmt) {
+            elmt.classList.toggle('blue');
+        }
+
+        // 也可以不要用this 效果跟上面一樣 但要寫querySelector
+        function toggleColor2() {
+            document.querySelector('#block2').classList.toggle('blue');
+        }
+    </script>
+</body>
+</html>

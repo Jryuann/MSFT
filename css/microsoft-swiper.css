@@ -1078,3 +1078,10 @@ footer a:hover ,.buttom_nav .buttom_nav_group ul li a:hover{
         padding-right: 0px;
     }
 }
+
+.swiper-stop{
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: #000;
+}
